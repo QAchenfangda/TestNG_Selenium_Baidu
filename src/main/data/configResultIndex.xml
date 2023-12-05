@@ -1,0 +1,11 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="Google Image Search Test Suite" parallel="false">
+    <test name="ImageSearchTest">
+        <parameter name="imagePath" value="path/to/your/image.png" />
+        <parameter name="searchResultIndex" value="3" />
+        <parameter name="screenShotPath" value="D:\screenshot.png"/>
+        <classes>
+            <class name="ImageSearchTest" />
+        </classes>
+    </test>
+</suite>
