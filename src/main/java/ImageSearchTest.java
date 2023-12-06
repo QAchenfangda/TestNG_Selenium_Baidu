@@ -33,11 +33,9 @@ public class ImageSearchTest {
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(3));
         // Upload picture, Set wait duration 3 seconds for page elements loading
         Wait<WebDriver> wait = new WebDriverWait(driver, Duration.ofSeconds(2));
-        //WebElement searchByImageButton = new WebDriverWait(driver,Duration.ofSeconds(2)).until(ExpectedConditions.elementToBeClickable(By.xpath("//span[@class=\"soutu-btn\"]")));
         WebElement searchByImageButton = driver.findElement(By.xpath("//span[@class=\"soutu-btn\"]"));
         wait.until(d -> searchByImageButton.isDisplayed());
         searchByImageButton.click();
-//        WebElement uploadFile = new WebDriverWait(driver, Duration.ofSeconds(2)).until(ExpectedConditions.elementToBeClickable(By.xpath("//input[@type=\"file\" and @class=\"upload-pic\"]")));
         WebElement uploadFile = driver.findElement(By.xpath("//input[@type=\"file\" and @class=\"upload-pic\"]"));
         Path path = Paths.get(uploadImagePath);
         uploadFile.sendKeys(path.toAbsolutePath().toString());
